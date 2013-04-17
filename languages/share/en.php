@@ -1,0 +1,28 @@
+<?php
+
+return array(
+    'share.form.checkbox.facebook'    => 'Facebook',
+    'share.form.checkbox.googleplus'  => 'Google+',
+    'share.form.checkbox.twitter'     => 'Twitter',
+    'share.form.checkbox.pinterest'   => 'Pinterest',
+    'share.form.checkbox.linkedin'    => 'LinkedIn',   
+    'share.form.checkbox.tumblr'      => 'Thumblr',
+    'share.form.checkbox.stumbleupon' => 'StumbleUpon',
+    'share.form.checkbox.reddit'      => 'Reddit',
+    'share.form.checkbox.email'       => 'Email',
+    'share.button.text'               => "E-mail share",
+    'share.form.email.sendername'     => "Sender's name",
+    'share.form.email.recipientname'  => "Recipient's name",
+    'share.form.email.senderemail'    => "Sender's e-mail address",
+    'share.form.email.recipientemail' => "Recipient's e-mail address",
+    'share.form.email.message'        => 'Personal message',
+    'share.form.email.captcha'        => 'Captcha',
+    'share.form.email.submit'         => 'Send',
+    'share.form.email.close'          => 'Close',
+    'share.email.message.subject'     => 'Your friend would like to share a link with you',
+    'share.email.message.hello'       => 'Hello %s!',
+    'share.email.message.share'       => 'Your friend (%s) would like to share a link with you:',
+    'share.email.sent.success'        => 'You successfully sent the reference of site.',
+    'share.email.sent.failed'         => 'You successfully sent the reference of site.',
+    'share.warn.deleted'              => 'Share deleted',
+);

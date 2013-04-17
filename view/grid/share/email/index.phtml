@@ -1,0 +1,36 @@
+
+
+<div class="share-send-email">
+    
+<?php
+if( is_null($this->sentResultSuccess) )
+{
+    echo $this->form( $this->form, 'share' );
+}
+else  
+{
+?> 
+    <?php if( $this->sentResultSuccess ) { ?>
+    
+        <p class="message success">
+            <?php echo $this->translate('share.email.sent.success','share'); ?>
+        </p>
+    
+    <?php }else{ ?>
+    
+        <p class="message failed">
+            <?php echo $this->translate('share.email.sent.failed','share'); ?>
+        </p>
+        
+    <?php } ?>
+ 
+    <button class="result-close">
+        <?php echo $this->translate('share.form.email.close','share'); ?>
+    </button>
+
+<?php
+}
+?> 
+        
+<div class="clearfix"></div>
+</div>

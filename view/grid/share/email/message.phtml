@@ -1,0 +1,11 @@
+
+<h1><?php echo sprintf($this->translate('share.email.message.hello','share'), htmlspecialchars($this->recipientName) ); ?></h1>
+
+<p>
+    <?php echo sprintf($this->translate('share.email.message.share','share'), htmlspecialchars($this->senderName) ); ?><br>
+    <a href="<?php echo htmlspecialchars($this->shareUrl) ?>" target="_blank"><?php echo htmlspecialchars($this->shareUrl) ?></a>
+</p>
+
+<p>
+    <?php echo htmlspecialchars($this->message) ?>
+</p>

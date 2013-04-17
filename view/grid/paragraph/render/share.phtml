@@ -1,0 +1,11 @@
+<?php
+
+if( is_null($paragraph->getSorted()) )
+{
+    echo $this->translate('share.warn.deleted','share');
+}
+else
+{
+
+    echo $this->shareButtons($this->paragraph);
+}        
