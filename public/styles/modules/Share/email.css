@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+.share-button-email:hover {
+    border-color: #aaaaaa!important;
+    background-color: #ffffff!important;
+}
+
+.share-send-email {
+    padding: 15px 30px;
+}
+
+
+.share-send-email form dl dt {
+    float: none;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.share-send-email form dl dd input[type=text],
+.share-send-email form dl dd input[type=email],
+.share-send-email form dl dd textarea {
+    width: 100%;
+}
+
+.share-send-email form dl dd textarea {
+    resize: none;
+}
+
+.share-send-email form dl dd.input-captcha {
+    position: relative;
+}
+.share-send-email form dl dd.input-captcha img {
+    display: block;
+    margin: 0 auto;
+}
+.share-send-email form dl dd.input-captcha br {
+    display: none;
+}
+.share-send-email form dl dd.input-captcha .captcha-regenerate {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+}
+.share-send-email form dl dd.input-captcha input[type=text] {
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+}
+
+.share-send-email form dl dd.input-captcha ul {
+    margin: 0;
+    padding: 0;
+}
+.share-send-email form dl dd.input-captcha ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #ff0000;
+}
+
+.share-send-email p.message {
+    text-align: center;
+}
+
+.share-send-email button.result-close {
+    display: block;
+    float: none;
+    margin: 2em auto 1em;
+}
+
+.share-send-email .clearfix {
+    float: none;
+    clear: both;
+    height: 0;
+}
