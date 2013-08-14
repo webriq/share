@@ -40,5 +40,10 @@
         "classmap": [
             "Module.php"
         ]
+    },
+    "extra": {
+        "modules": {
+            "Grid\\Share": "Share"
+        }
     }
 }
