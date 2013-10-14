@@ -51,8 +51,6 @@
         "display-description": {
             "en": "No matter if you run a business or a hobby website, you can't afford anymore to miss its presence on the social media. When you install this package, a new type of paragraph will become available for you so that you can share the content of your pages on the most popular social media channels like  Facebook like, Google +1, Twitter Tweet, Pinterest \"Pin it\", LinkedIN share, Tumblr share, Stumbleupon, Reddit, etc."
         },
-        "modules": {
-            "Grid\\Share": "Share"
-        }
+        "module": "Grid\\Share"
     }
 }
