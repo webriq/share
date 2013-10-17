@@ -4,8 +4,8 @@ namespace Grid\Share\Form;
 
 use Zork\Form\Form;
 use Zork\Form\PrepareElementsAwareInterface;
-use Zend\Authentication\AuthenticationService;
-use Zork\Authentication\AuthenticationServiceAwareTrait;
+use Zend\ServiceManager\ServiceLocatorAwareTrait;
+use Zend\ServiceManager\ServiceLocatorAwareInterface;
 
 /**
  * Email sending form
@@ -13,20 +13,11 @@ use Zork\Authentication\AuthenticationServiceAwareTrait;
  * @author Kristof Matos <kristof.matos@megaweb.hu>
  */
 class Email extends Form
-         implements PrepareElementsAwareInterface
+         implements ServiceLocatorAwareInterface,
+                    PrepareElementsAwareInterface
 {
 
-    use AuthenticationServiceAwareTrait;
-
-    /**
-     * Constructor
-     *
-     * @param   AuthenticationService   $authenticationService
-     */
-    public function __construct( AuthenticationService $authenticationService )
-    {
-        $this->setAuthenticationService( $authenticationService );
-    }
+    use ServiceLocatorAwareTrait;
 
     /**
      * Prepare additional elements for the form
@@ -35,7 +26,8 @@ class Email extends Form
      */
     public function prepareElements()
     {
-        $auth = $this->getAuthenticationService();
+        $auth = $this->getServiceLocator()
+                     ->get( 'Zend\Authentication\AuthenticationService' );
 
         if ( $auth->hasIdentity() )
         {
