@@ -5,7 +5,6 @@ namespace Grid\Share\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-use Zend\Authentication\AuthenticationService;
 use Zork\Mail\Message;
 use Zork\Mail\ServiceFactory;
 
@@ -28,8 +27,7 @@ class EmailController extends AbstractActionController
         $serviceLocator = $this->getServiceLocator();
         $form           = $serviceLocator->get('Form')->get('Grid\Share\Email');
         $translator     = $serviceLocator->get('translator');
-
-        $auth   = new AuthenticationService();
+        $auth           = $serviceLocator->get('Zend\Authentication\AuthenticationService');
 
         if ( $request->isPost() )
         {

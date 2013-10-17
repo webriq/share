@@ -5,6 +5,7 @@ namespace Grid\Share\Form;
 use Zork\Form\Form;
 use Zork\Form\PrepareElementsAwareInterface;
 use Zend\Authentication\AuthenticationService;
+use Zork\Authentication\AuthenticationServiceAwareTrait;
 
 /**
  * Email sending form
@@ -15,6 +16,18 @@ class Email extends Form
          implements PrepareElementsAwareInterface
 {
 
+    use AuthenticationServiceAwareTrait;
+
+    /**
+     * Constructor
+     *
+     * @param   AuthenticationService   $authenticationService
+     */
+    public function __construct( AuthenticationService $authenticationService )
+    {
+        $this->setAuthenticationService( $authenticationService );
+    }
+
     /**
      * Prepare additional elements for the form
      *
@@ -22,13 +35,12 @@ class Email extends Form
      */
     public function prepareElements()
     {
-        $auth = new AuthenticationService;
+        $auth = $this->getAuthenticationService();
 
         if ( $auth->hasIdentity() )
         {
             $this->remove('captcha');
         }
-
     }
 
 }
