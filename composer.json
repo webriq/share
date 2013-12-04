@@ -31,7 +31,8 @@
     "require": {
         "php": ">=5.4",
         "gridguyz/module-installer": "*",
-        "gridguyz/core": "*"
+        "gridguyz/core": "*",
+        "gridguyz/facebook": "*"
     },
     "autoload": {
         "psr-0": {
