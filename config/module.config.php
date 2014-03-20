@@ -20,6 +20,7 @@ return array(
             'adapter'    => array(
                 'email'       => 'Grid\Share\Model\Service\Email',
                 'facebook'    => 'Grid\Share\Model\Service\Facebook',
+                'facebookshare' => 'Grid\Share\Model\Service\FacebookShare',
                 'googleplus'  => 'Grid\Share\Model\Service\Googleplus',
                 'linkedin'    => 'Grid\Share\Model\Service\Linkedin',
                 'pinterest'   => 'Grid\Share\Model\Service\Pinterest',
@@ -158,6 +159,7 @@ return array(
                                         'label'      => 'paragraph.form.share.services',
                                         'value_options'   => array(
                                             'facebook'    => 'share.form.checkbox.facebook',
+                                            'facebookshare' => 'share.form.checkbox.facebookshare',
                                             'googleplus'  => 'share.form.checkbox.googleplus',
                                             'twitter'     => 'share.form.checkbox.twitter',
                                             'pinterest'   => 'share.form.checkbox.pinterest',
@@ -216,6 +218,7 @@ return array(
             'shareButtons'           => 'Grid\Share\View\Helper\ShareButtons',
             'shareButtonEmail'       => 'Grid\Share\View\Helper\Button\Email',
             'shareButtonFacebook'    => 'Grid\Share\View\Helper\Button\Facebook',
+            'shareButtonFacebookShare' => 'Grid\Share\View\Helper\Button\FacebookShare',
             'shareButtonGoogleplus'  => 'Grid\Share\View\Helper\Button\Googleplus',
             'shareButtonLinkedin'    => 'Grid\Share\View\Helper\Button\Linkedin',
             'shareButtonPinterest'   => 'Grid\Share\View\Helper\Button\Pinterest',

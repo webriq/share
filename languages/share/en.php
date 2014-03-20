@@ -1,7 +1,8 @@
 <?php
 
 return array(
-    'share.form.checkbox.facebook'    => 'Facebook',
+    'share.form.checkbox.facebook'    => 'Facebook Like',
+    'share.form.checkbox.facebookshare' => 'Facebook Share',
     'share.form.checkbox.googleplus'  => 'Google+',
     'share.form.checkbox.twitter'     => 'Twitter',
     'share.form.checkbox.pinterest'   => 'Pinterest',

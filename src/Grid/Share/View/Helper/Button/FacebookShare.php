@@ -8,7 +8,7 @@ use Zend\View\Helper\AbstractHelper;
  *
  * @author Kristof Matos <kristof.matos@megaweb.hu>
  */
-class Facebook extends AbstractHelper implements ButtonInterface
+class FacebookShare extends AbstractHelper implements ButtonInterface
 {
    /**
      * Renders button html
@@ -23,11 +23,12 @@ class Facebook extends AbstractHelper implements ButtonInterface
         return <<<SCRIPT
 <div data-locale="$locale"
      data-js-type="js.facebook.xfbml"
-     class="fb-like"
+     class="fb-share-button"           
      data-href="$url"
      data-send="false"
-     data-layout="button_count"
-     data-show-faces="false"></div>
+
+     data-type="button_count"
+></div>
 SCRIPT;
     }
 
