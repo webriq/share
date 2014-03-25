@@ -26,7 +26,7 @@ class FacebookShare extends AbstractHelper implements ButtonInterface
      class="fb-share-button"           
      data-href="$url"
      data-send="false"
-
+     data-width="100"
      data-type="button_count"
 ></div>
 SCRIPT;
