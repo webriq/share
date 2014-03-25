@@ -28,7 +28,8 @@ class Facebook extends AbstractHelper implements ButtonInterface
      data-send="false"
      data-width="100"
      data-layout="button_count"
-     data-show-faces="false"></div>
+     data-show-faces="false"
+     data-share="false"></div>
 SCRIPT;
     }
 

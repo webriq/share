@@ -19,6 +19,7 @@
     list-style: none;
     vertical-align: middle;
     min-height: 24px;
+    height: 24px;
 }
 
 .js-dashboard .share-form-checkboxes {
