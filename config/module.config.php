@@ -127,9 +127,7 @@ return array(
                     'spec'  => array(
                         'options'   => array(
                             'options'   => array(
-                                'functions'     => array(
-                                    'label'     => 'paragraph.type-group.functions',
-                                    'order'     => 4,
+                                'social'    => array(
                                     'options'   => array(
                                         'share' => 'paragraph.type.share',
                                     ),
