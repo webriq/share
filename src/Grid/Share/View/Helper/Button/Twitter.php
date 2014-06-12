@@ -20,7 +20,9 @@ class Twitter extends AbstractHelper implements ButtonInterface
     public function getHtml( $url, $locale )
     {      
         return <<<SCRIPT
-<a data-js-type="js.share.twitter" href="https://twitter.com/share" class="twitter-share-button" data-width="100" data-lang="$locale">Tweet</a>
+<a data-js-type="js.share.twitter" href="https://twitter.com/share" 
+   data-url="$url" 
+   class="twitter-share-button" data-width="100" data-lang="$locale">Tweet</a>
 SCRIPT;
     }
 

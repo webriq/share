@@ -1,10 +1,36 @@
 <?php
 
 return array(
+    
+    'router' => array(
+        'routes' => array(
+            'Grid\Share\Paragraph' => array(
+                'type' => 'Zend\Mvc\Router\Http\Segment',
+                'options' => array(
+                    'route'    => '/app/:locale/share',
+                    'defaults' => array(
+                        'controller' => 'Grid\Share\Controller\Paragraph',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'Grid\Share\Email' => array(
+                'type' => 'Zend\Mvc\Router\Http\Segment',
+                'options' => array(
+                    'route'    => '/app/:locale/share/email',
+                    'defaults' => array(
+                        'controller' => 'Grid\Share\Controller\Email',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+        ),
+    ),  
+    
     'controllers' => array(
         'invokables' => array(
-            'Grid\Share\Controller\Paragraph'  => 'Grid\Share\Controller\ParagraphController',
-            'Grid\Share\Controller\Email'      => 'Grid\Share\Controller\EmailController',
+            'Grid\Share\Controller\Paragraph' => 'Grid\Share\Controller\ParagraphController',
+            'Grid\Share\Controller\Email'     => 'Grid\Share\Controller\EmailController',
         ),
     ),
     'factory' => array(
@@ -30,8 +56,76 @@ return array(
                 'twitter'     => 'Grid\Share\Model\Service\Twitter',
             ),
         ),
+        'Grid\Core\Model\Settings\StructureFactory' => array(
+            'dependency'    => 'Grid\Core\Model\Settings\StructureAbstract',
+            'adapter'       => array(
+                'share-microcontent' => 'Grid\Share\Model\Settings\Structure\Microcontent',
+            ),
+        ),
     ),
     'form' => array(
+        
+        'Grid\Core\Settings\Share' => array(
+            'type'          => 'Grid\Core\Form\Settings',
+            'attributes'    => array(
+                'data-js-type' => 'js.form.fieldsetTabs',
+            ),
+            'fieldsets' => array(
+                'share-microcontent'   => array(
+                    'spec'  => array(
+                        'name'      => 'microcontent',
+                        'options'   => array(
+                            'label'         => 'share.form.settings.microcontent.legend',
+                            'description'   => 'share.form.settings.microcontent.description',
+                        ),
+                        'elements'  => array(
+                            'enable'    => array(
+                                'spec'  => array(
+                                    'type'  => 'Zork\Form\Element\Checkbox',
+                                    'name'  => 'enable',
+                                    'options'   => array(
+                                        'label'       => 'share.form.settings.microcontent.share.enable',
+                                        'description' => 'share.form.settings.microcontent.share.enable.description',
+                                    ),
+                                ),
+                            ),
+                            'articleButtons'    => array(
+                                'spec'  => array(
+                                    'type'  => 'Grid\Share\Form\Element\ShareCheckboxGroup',
+                                    'name'  => 'articleButtons',
+                                    'options'   => array(
+                                        'label' => 'share.form.settings.microcontent.buttons.article',
+                                        'value_options'   => array(
+                                            'facebook'    => 'share.form.checkbox.facebookshare',
+                                            'twitter'     => 'share.form.checkbox.twitter',
+                                            'googleplus'  => 'share.form.checkbox.googleplus',
+                                            'linkedin'    => 'share.form.checkbox.linkedin',                                      
+                                        ),
+                                    ),                                    
+                                ),
+                            ),
+                            'imageButtons'    => array(
+                                'spec'  => array(
+                                    'type'  => 'Grid\Share\Form\Element\ShareCheckboxGroup',
+                                    'name'  => 'imageButtons',
+                                    'options'   => array(
+                                        'label' => 'share.form.settings.microcontent.buttons.image',
+                                        'value_options'   => array(
+                                            'facebook'    => 'share.form.checkbox.facebookshare',
+                                            'twitter'     => 'share.form.checkbox.twitter',
+                                            'googleplus'  => 'share.form.checkbox.googleplus',
+                                            'linkedin'    => 'share.form.checkbox.linkedin',
+                                            'pinterest'   => 'share.form.checkbox.pinterest',
+                                        ),
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+        ),
+        
         'Grid\Share\Email' => array(
             'type'      => 'Grid\Share\Form\Email',
             'elements'  => array(
@@ -140,6 +234,7 @@ return array(
         ),
         'Grid\Paragraph\Meta\Edit' => array(
             'fieldsets' => array(
+                
                 'share' => array(
                     'spec' => array(
                         'name'      => 'share',
@@ -174,33 +269,62 @@ return array(
                         ),
                     ),
                 ),
-            ),
-        ),
-    ),
-    'router' => array(
-        'routes' => array(
-            'Grid\Share\Paragraph' => array(
-                'type' => 'Zend\Mvc\Router\Http\Segment',
-                'options' => array(
-                    'route'    => '/app/:locale/share',
-                    'defaults' => array(
-                        'controller' => 'Grid\Share\Controller\Paragraph',
-                        'action'     => 'index',
+
+                'image' => array(
+                    'spec' => array(
+                        'elements'  => array(
+                            'microcontentShare'  => array(
+                                'spec'  => array(
+                                    'type'      => 'Zork\Form\Element\Select',
+                                    'name'      => 'microcontentShare',
+                                    'options'   => array(
+                                        'label'     => 'share.microcontent.enable.share.image',
+                                        'required'  => false,
+                                        'value_options'   => array(
+                                            ''        => 'share.microcontent.enable.share.useglobal',
+                                            'enable'  => 'share.microcontent.enable.share.enable',
+                                            'disable' => 'share.microcontent.enable.share.disable',
+                                        ),
+                                    ),
+                                ),
+                                'flags' => array(
+                                    'priority' => -1000,
+                                ),
+                            ),
+                        ),
                     ),
                 ),
-            ),
-            'Grid\Share\Email' => array(
-                'type' => 'Zend\Mvc\Router\Http\Segment',
-                'options' => array(
-                    'route'    => '/app/:locale/share/email',
-                    'defaults' => array(
-                        'controller' => 'Grid\Share\Controller\Email',
-                        'action'     => 'index',
+                
+                'contentList' => array(
+                    'spec' => array(
+                        'elements'  => array(
+                            'microcontentShare'  => array(
+                                'spec'  => array(
+                                    'type'      => 'Zork\Form\Element\Select',
+                                    'name'      => 'microcontentShare',
+                                    'options'   => array(
+                                        'label'     => 'share.microcontent.enable.share.contentList',
+                                        'required'  => false,
+                                        'value_options'   => array(
+                                            ''        => 'share.microcontent.enable.share.useglobal',
+                                            'enable'  => 'share.microcontent.enable.share.enable',
+                                            'disable' => 'share.microcontent.enable.share.disable',
+                                        ),
+                                    ),
+                                ),
+                                'flags' => array(
+                                    'priority' => -1000,
+                                ),
+                            ),
+                        ),
                     ),
                 ),
+                
             ),
         ),
+        
     ),
+
     'translator' => array(
         'translation_file_patterns' => array(
             'share' => array(
@@ -237,6 +361,14 @@ return array(
         'template_path_stack' => array(
             __DIR__ . '/../view',
         ),
+        'head_defaults' => array(
+            'headScript' => array(
+                'shareJs' => array(
+                    'src'       => '/scripts/zork/share.js',
+                    'type'      => 'text/javascript',
+                ),
+            ),
+        ),
     ),
     'modules'   => array(
         'Grid\Share'  => array(
@@ -256,5 +388,61 @@ return array(
                 ),
             ),
         ),
+        'Grid\Core'  => array(
+            
+            'settings' => array(
+                'share' => array(
+                    'textDomain'    => 'share',
+                    'fieldsets'     => array(
+                        'microcontent'       => 'share-microcontent',
+                    ),
+                ),
+                'share-microcontent' => array(
+                    'textDomain'    => 'share',
+                    'elements'      => array(
+                        'enable'    => array(
+                            'key'   => 'modules.Grid\Share.settings.microcontent.enable',
+                            'type'  => 'ini',
+                        ),
+                        'articleButtons'    => array(
+                            'key'   => 'modules.Grid\Share.settings.microcontent.articleButtons',
+                            'type'  => 'ini',
+                        ),
+                        'imageButtons'    => array(
+                            'key'   => 'modules.Grid\Share.settings.microcontent.imageButtons',
+                            'type'  => 'ini',
+                        ),
+                    ),
+                ),
+            ),
+            
+            'navigation'    => array(
+               'settings'  => array(
+                    'pages' => array(
+                        'service'   => array(
+                            'label'         => 'admin.navTop.service',
+                            'textDomain'    => 'admin',
+                            'order'         => 7,
+                            'uri'           => '#',
+                            'parentOnly'    => true,
+                            'pages'         => array(
+                                'share'    => array(
+                                    'label'         => 'admin.navTop.settings.share',
+                                    'textDomain'    => 'admin',
+                                    'order'         => 1,
+                                    'route'         => 'Grid\Core\Settings\Index',
+                                    'resource'      => 'settings.share',
+                                    'privilege'     => 'edit',
+                                    'params'        => array(
+                                        'section'   => 'share',
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+        ),
+        
     ),
 );

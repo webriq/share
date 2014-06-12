@@ -26,4 +26,18 @@ return array(
     'share.email.sent.success'        => 'You successfully sent the reference of site.',
     'share.email.sent.failed'         => 'You successfully sent the reference of site.',
     'share.warn.deleted'              => 'Share deleted',
+    
+    'share.microcontent.enable.share.useglobal'                 => 'Use global settings',
+    'share.microcontent.enable.share.enable'                    => 'Enable',
+    'share.microcontent.enable.share.disable'                   => 'Disable',
+    'share.form.settings.microcontent.legend'                   => 'Share microcontent',
+    'share.form.settings.microcontent.description'              => 'Share microcontent description',
+    'share.form.settings.microcontent.share.enable'             => 'Enable microcontent share',    
+    'share.form.settings.microcontent.share.enable.description' => 'Overwritable in paragraph settings',
+    'share.form.settings.microcontent.buttons.image'            => 'Share image buttons',
+    'share.form.settings.microcontent.buttons.article'          => 'Share articel buttons',
+    'share.microcontent.enable.share.image'                     => 'Enable image share',
+    'share.microcontent.enable.share.image.description'         => 'changes displayed after page reload',
+    'share.microcontent.enable.share.contentList'               => 'Enable items share',
+    'share.microcontent.enable.share.contentList.description'   => 'changes displayed after page reload',
 );

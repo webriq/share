@@ -14,23 +14,26 @@ class ShareButtons extends AbstractHelper
     /**
      * Returns buttons html
      *
-     * @param \Share\Model\Paragraph\Structure\Share $paragraph
+     * @param string $url
+     * @param string[] $serviceList array of service names
+     * 
      * @return string
      */
-    public function render(ShareParagraph $paragraph)
+    public function render($url,$serviceList)
     {
         $html = array();
-
+        
         $serviceLocator = $this->view->getHelperPluginManager()
                                      ->getServiceLocator();
 
         $locale = $serviceLocator->get('translator')->getLocale();
 
-        if( is_array($paragraph->sorted) )
+        if( is_array($serviceList) && !empty($serviceList) )
         {
             $html[] ='<ul class="share-buttons">';
-            foreach($paragraph->sorted as $service)
+            foreach($serviceList as $service)
             {
+               
                 if( !empty($service) )
                 {
                     $html[] = '<li>';
@@ -39,7 +42,7 @@ class ShareButtons extends AbstractHelper
                                     ->factory($service);
                     $adapter->setView($this->view);
                     $adapter->setLocale($locale);
-                    $adapter->setUrl($paragraph->getContentUrl());
+                    $adapter->setUrl($url);
                     $html[] = $adapter->renderButton();
                     $html[] = '</li>';
                 }
@@ -50,8 +53,15 @@ class ShareButtons extends AbstractHelper
         return implode($html);
     }
 
-    public function __invoke(ShareParagraph $paragraph)
+    /**
+     * 
+     * @param string $url
+     * @param string[] $serviceList array of service names
+     * 
+     * @return type
+     */
+    public function __invoke($url,$serviceList)
     {
-        return $this->render($paragraph);
+        return $this->render($url,$serviceList);
     }
 }

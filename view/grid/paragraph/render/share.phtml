@@ -7,5 +7,6 @@ if( is_null($paragraph->getSorted()) )
 else
 {
 
-    echo $this->shareButtons($this->paragraph);
+    echo $this->shareButtons( $this->paragraph->getContentUrl(),
+                              $paragraph->sorted);
 }        

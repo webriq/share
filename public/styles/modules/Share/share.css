@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+/* ---------------------------------------------------------- */
+/*  paragraph                                                 */
+/* ---------------------------------------------------------- */
+
 .paragraph.paragraph-share {
     min-height: 0.5em;
 }
@@ -28,4 +32,92 @@
 .share-form-checkboxes>label{
     display: block;
     margin-bottom: 0.2em;
+}
+
+/* ---------------------------------------------------------- */
+/*  microcontent                                              */
+/* ---------------------------------------------------------- */
+
+.microcontent {
+    position: relative;
+}
+
+.microcontent .share.toolbar {
+    display: inline-block;
+}
+
+.microcontent .share.toolbar.floating {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 3;
+}
+
+
+.microcontent .share.toolbar div.share-button {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url(../../../images/modules/Share/icons/24/share.png);  
+    background-position: left top;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 0;
+}
+.microcontent .share.toolbar.open div.share-button {
+    display: none;
+}
+.microcontent .share.toolbar ul.buttons {
+    list-style: none;
+    padding: 0;
+    margin: 0;    
+    display: none;
+    overflow: auto;
+}
+
+.microcontent .share.toolbar.floating ul.buttons {
+    background-color: #ffffff;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+    padding: 5px;
+}
+
+.microcontent .share.toolbar.open ul.buttons {
+    display: block;
+}
+
+.microcontent .share.toolbar ul.buttons li {
+    padding: 0;
+    margin: 0 0 0 5px;
+    float: left;
+}
+
+.microcontent .share.toolbar ul.buttons li:first-child {
+    margin-left: 0;
+}
+
+.microcontent .share.toolbar ul.buttons li .button {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-position: left top;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.microcontent .share.toolbar ul.buttons li .button.facebook {
+    background-image: url(../../../images/modules/Share/icons/24/facebook.png);  
+}
+.microcontent .share.toolbar ul.buttons li .button.twitter {
+    background-image: url(../../../images/modules/Share/icons/24/twitter.png);  
+}
+.microcontent .share.toolbar ul.buttons li .button.googleplus {
+    background-image: url(../../../images/modules/Share/icons/24/googleplus.png);  
+}
+.microcontent .share.toolbar ul.buttons li .button.pinterest {
+    background-image: url(../../../images/modules/Share/icons/24/pinterest.png);  
+}
+.microcontent .share.toolbar ul.buttons li .button.linkedin {
+    background-image: url(../../../images/modules/Share/icons/24/linkedin.png);  
 }
