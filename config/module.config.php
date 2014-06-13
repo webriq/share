@@ -295,31 +295,6 @@ return array(
                     ),
                 ),
                 
-                'contentList' => array(
-                    'spec' => array(
-                        'elements'  => array(
-                            'microcontentShare'  => array(
-                                'spec'  => array(
-                                    'type'      => 'Zork\Form\Element\Select',
-                                    'name'      => 'microcontentShare',
-                                    'options'   => array(
-                                        'label'     => 'share.microcontent.enable.share.contentList',
-                                        'required'  => false,
-                                        'value_options'   => array(
-                                            ''        => 'share.microcontent.enable.share.useglobal',
-                                            'enable'  => 'share.microcontent.enable.share.enable',
-                                            'disable' => 'share.microcontent.enable.share.disable',
-                                        ),
-                                    ),
-                                ),
-                                'flags' => array(
-                                    'priority' => -1000,
-                                ),
-                            ),
-                        ),
-                    ),
-                ),
-                
             ),
         ),
         
