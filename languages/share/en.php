@@ -27,6 +27,8 @@ return array(
     'share.email.sent.failed'         => 'You successfully sent the reference of site.',
     'share.warn.deleted'              => 'Share deleted',
     
+    'share.pinterest.select.image.title' => 'Select image to Pin',
+ 
     'share.microcontent.enable.share.useglobal'                 => 'Use global settings',
     'share.microcontent.enable.share.enable'                    => 'Enable',
     'share.microcontent.enable.share.disable'                   => 'Disable',

@@ -27,10 +27,6 @@ class Pinterest extends AbstractHelper implements ButtonInterface
         return <<<SCRIPT
 <a href="$url"
     data-js-type="js.share.pinIt"
-    data-js-link-type="callback"
-    data-js-width="820"
-    data-js-height="400"
-    data-js-callback="js.share.pinIt"
     data-js-background-color="#fff"
     data-js-color="#cd2a31"
     data-min-width="{$pinterestConfig['width']['min']}"

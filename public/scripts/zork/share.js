@@ -208,6 +208,7 @@
                             "text": shareObject.description
                         }
                     ;
+
                     microcontentObject.popup( 
                         url+'?'+$.param(params),
                         {'width':600,'height': 540} 
