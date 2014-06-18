@@ -43,7 +43,9 @@
 }
 
 .microcontent .share.toolbar {
-    display: inline-block;
+    clear: both;
+    display: block;
+    float: left;
 }
 
 .microcontent .share.toolbar.floating {
@@ -72,8 +74,8 @@
     list-style: none;
     padding: 0;
     margin: 0;    
-    display: none;
     overflow: auto;
+    display: none;
 }
 
 .microcontent .share.toolbar.floating ul.buttons {
@@ -120,4 +122,20 @@
 }
 .microcontent .share.toolbar ul.buttons li .button.linkedin {
     background-image: url(../../../images/modules/Share/icons/24/linkedin.png);  
+}
+
+.microcontent .share.toolbar ul.buttons li:hover .button.facebook {
+    background-image: url(../../../images/modules/Share/icons/24/facebook-over.png);  
+}
+.microcontent .share.toolbar ul.buttons li:hover .button.twitter {
+    background-image: url(../../../images/modules/Share/icons/24/twitter-over.png);  
+}
+.microcontent .share.toolbar ul.buttons li:hover .button.googleplus {
+    background-image: url(../../../images/modules/Share/icons/24/googleplus-over.png);  
+}
+.microcontent .share.toolbar ul.buttons li:hover .button.pinterest {
+    background-image: url(../../../images/modules/Share/icons/24/pinterest-over.png);  
+}
+.microcontent .share.toolbar ul.buttons li:hover .button.linkedin {
+    background-image: url(../../../images/modules/Share/icons/24/linkedin-over.png);  
 }

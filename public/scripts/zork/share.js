@@ -97,8 +97,8 @@
                 toggleTimeout = null,
                 toggleDelay = 5000,
                 wrapper = $('<div>').addClass('share toolbar '+(share.type === 'image'?'floating':''))
-                                    .bind('mouseover',function(){ toggle('open'); return false; })
-                                    .bind('mouseout',function(){ toggle('close'); return false; })
+                                    .on('mouseenter',function(e){ console.log('mouse over'); toggle('open'); return false; })
+                                    .on('mouseleave',function(e){ console.log('mouse out');toggle('close'); return false; })
                             ,
                 button  = $('<div>').addClass('share-button')
                                     .bind('click',function(){ toggle('open','click'); return false; })
@@ -111,6 +111,7 @@
                     if( to === 'open' )
                     {
                         wrapper.addClass('open');
+                        $('ul',wrapper).stop().hide().fadeIn(400);
                         if( evt==='click' )
                         {
                             setTimeout(function(){ toggle('close'); },toggleDelay);
@@ -118,7 +119,8 @@
                     }
                     else
                     {
-                        wrapper.removeClass('open');
+                        $('ul',wrapper).stop().fadeOut(400,function(){ wrapper.removeClass('open'); });
+                        
                     }
                 }
             ;
