@@ -22,7 +22,7 @@ class Twitter extends AbstractHelper implements ButtonInterface
         return <<<SCRIPT
 <a data-js-type="js.share.twitter" href="https://twitter.com/share" 
    data-url="$url" 
-   class="twitter-share-button" data-width="100" data-lang="$locale">Tweet</a>
+   class="twitter-share-button" data-width="100" data-lang="$locale"></a>
 SCRIPT;
     }
 
