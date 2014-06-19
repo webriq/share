@@ -160,7 +160,7 @@
                     success: function(){ }
                 });
             },
-            exludeUrl: function(url)
+            excludeUrl: function(url)
             {
                 var siteUrl = global.location.protocol+'//'+global.location.host,
                     exp     = new RegExp('^'+siteUrl+'/(style|images|scripts)')
@@ -194,7 +194,7 @@
                         url = cssImage;
                     }
                     
-                    if( url && !Me.exludeUrl(url) )
+                    if( url && !Me.excludeUrl(url) )
                     {
                         imageArray.push(url);
                     }

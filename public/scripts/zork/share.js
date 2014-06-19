@@ -22,7 +22,7 @@
     js.style('/styles/modules/Share/share.css');
 
     /**
-     * @class User module
+     * @class Share module
      * @constructor
      * @memberOf Zork
      */
@@ -97,8 +97,8 @@
                 toggleTimeout = null,
                 toggleDelay = 5000,
                 wrapper = $('<div>').addClass('share toolbar '+(share.type === 'image'?'floating':''))
-                                    .on('mouseenter',function(e){ console.log('mouse over'); toggle('open'); return false; })
-                                    .on('mouseleave',function(e){ console.log('mouse out');toggle('close'); return false; })
+                                    .on('mouseenter',function(e){ toggle('open'); return false; })
+                                    .on('mouseleave',function(e){ toggle('close'); return false; })
                             ,
                 button  = $('<div>').addClass('share-button')
                                     .bind('click',function(){ toggle('open','click'); return false; })
