@@ -1,4 +1,4 @@
-Share module for Gridguyz
+Share module for WebriQ CMS
 ==========================
 
 Share module provides a paragraph, that enables your users to share contents
@@ -19,5 +19,5 @@ Currently you can share contents with:
 License
 -------
 
-Gridguyz is under **Creative Commons Attribution-ShareAlike 3.0** (cc-by-sa-3.0).
+WebriQ CMS is under BSD License .
 More info at [LICENSE.txt](LICENSE.txt).
